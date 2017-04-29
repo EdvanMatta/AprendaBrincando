@@ -135,7 +135,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
 
     private int numAletorio() {
         Random randomico = new Random();
-        int num = randomico.nextInt(10);
+        int num = randomico.nextInt(11);
         return num;
     }
 
