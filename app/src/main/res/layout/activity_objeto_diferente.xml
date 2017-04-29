@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="aprendabrincando.edvanmatta.com.aprendabrincando.ObjetoDiferente">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/titulo_jogo_2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/img1Id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/imageView6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp" />
+
+        <ImageView
+            android:id="@+id/img2Id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignLeft="@+id/img4Id"
+            android:layout_alignStart="@+id/img4Id"
+            android:layout_alignTop="@+id/img1Id"/>
+
+        <ImageView
+            android:id="@+id/img4Id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignTop="@+id/img3Id"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/img3Id"
+            android:layout_toRightOf="@+id/img3Id"/>
+
+        <ImageView
+            android:id="@+id/img3Id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="39dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="305dp"
+            android:layout_below="@+id/img1Id"
+            android:layout_alignLeft="@+id/img1Id"
+            android:layout_alignStart="@+id/img1Id" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
