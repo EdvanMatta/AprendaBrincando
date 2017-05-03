@@ -19,6 +19,8 @@
         <activity android:name=".JogoLeiaBicho" />
         <activity android:name=".ObjetoDiferente" />
         <activity android:name=".EncontreObjeto" />
+        <activity android:name=".Score"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

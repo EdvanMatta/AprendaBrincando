@@ -1,13 +1,20 @@
 package aprendabrincando.edvanmatta.com.aprendabrincando;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Vibrator;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Random;
+
 
 public class ObjetoDiferente extends AppCompatActivity{
 
@@ -16,7 +23,15 @@ public class ObjetoDiferente extends AppCompatActivity{
     private ImageView img3;
     private ImageView img4;
 
+    private int contador;
+    private int pontosAcertos;
+    private int pontosErros;
+
     private int idView;
+    int[] pontos;
+
+    private int ACERTOS = 1;
+    private int ERROS = 1;
 
     //private MediaPlayer som;
 
@@ -33,14 +48,19 @@ public class ObjetoDiferente extends AppCompatActivity{
         idView = numAletorio();
         imagemView(idView);
 
-
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (idView == 3) {
                     Toast.makeText(ObjetoDiferente.this, "Parabéns você acertou", Toast.LENGTH_SHORT).show();
                     imagemView(numAletorio());
+                    pontosAcertos = ACERTOS;
+                }else {
+                    vibrar();
+                    Toast.makeText(ObjetoDiferente.this, "Você Errou!", Toast.LENGTH_SHORT).show();
+                    pontosErros = ERROS;
                 }
+                pontuacaoJogo(pontosAcertos, pontosErros);
             }
         });
         img2.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +69,13 @@ public class ObjetoDiferente extends AppCompatActivity{
                 if (idView == 1) {
                     Toast.makeText(ObjetoDiferente.this, "Parabéns você acertou", Toast.LENGTH_SHORT).show();
                     imagemView(numAletorio());
+                    pontosAcertos = ACERTOS;
+                }else {
+                    vibrar();
+                    Toast.makeText(ObjetoDiferente.this, "Você Errou!", Toast.LENGTH_SHORT).show();
+                    pontosErros = ERROS;
                 }
+                pontuacaoJogo(pontosAcertos, pontosErros);
             }
         });
         img3.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +84,13 @@ public class ObjetoDiferente extends AppCompatActivity{
                 if (idView == 2) {
                     Toast.makeText(ObjetoDiferente.this, "Parabéns você acertou", Toast.LENGTH_SHORT).show();
                     imagemView(numAletorio());
+                    pontosAcertos = ACERTOS;
+                }else {
+                    vibrar();
+                    Toast.makeText(ObjetoDiferente.this, "Você Errou!", Toast.LENGTH_SHORT).show();
+                    pontosErros = ERROS;
                 }
+                pontuacaoJogo(pontosAcertos, pontosErros);
             }
         });
         img4.setOnClickListener(new View.OnClickListener() {
@@ -67,9 +99,23 @@ public class ObjetoDiferente extends AppCompatActivity{
                 if (idView == 0) {
                     Toast.makeText(ObjetoDiferente.this, "Parabéns você acertou", Toast.LENGTH_SHORT).show();
                     imagemView(numAletorio());
+                    pontosAcertos = ACERTOS;
+                }else {
+                    vibrar();
+                    Toast.makeText(ObjetoDiferente.this, "Você Errou!", Toast.LENGTH_SHORT).show();
+                    pontosErros = ERROS;
                 }
+                pontuacaoJogo(pontosAcertos, pontosErros);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        contador = 0;
+        pontosAcertos = 0;
+        pontosErros = 0;
     }
 
     int numAletorio(){
@@ -107,5 +153,41 @@ public class ObjetoDiferente extends AppCompatActivity{
             default:
         }
         idView = rand;
+    }
+
+    private void pontuacaoJogo(int acertos, int erros){
+        pontos[0] += acertos;
+        pontos[1] += erros;
+        contador ++;
+        if (contador > 10) {
+            alertaDialogo(pontos);
+        }
+    }
+
+    public void alertaDialogo(final int[] pontos){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Aprenda Brincando");
+        builder.setMessage("Digite o seu nome");
+        final EditText input = new EditText(this);
+        builder.setView(input);
+        builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String nome = input.getText().toString();
+                Intent i = new Intent(getApplicationContext(), Score.class);
+                i.putExtra("nome", nome);
+                i.putExtra("pontos", pontos);
+                startActivity(i);
+            }
+        });
+        AlertDialog alerta = builder.create();
+        alerta.show();
+    }
+
+    public void vibrar(){
+        Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        long tempo = 100; //100 milissegundos
+        vibra.vibrate(tempo);
     }
 }
