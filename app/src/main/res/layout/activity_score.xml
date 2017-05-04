@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="aprendabrincando.edvanmatta.com.aprendabrincando.Score">
+
+    <LinearLayout
+        android:layout_width="383dp"
+        android:layout_height="565dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/fundo_grama"
+        android:orientation="vertical"
+        tools:gravity="center_vertical|center_horizontal"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/txtViewTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hapticFeedbackEnabled="false"
+            android:text="SCORE"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@android:color/background_light" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="437dp">
+
+            <TextView
+                android:id="@+id/txtNomeID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                tools:gravity="center" />
+
+            <TextView
+                android:id="@+id/txtPontoAcertosID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNomeID"
+                android:layout_marginEnd="46dp"
+                android:layout_marginRight="46dp"
+                android:layout_marginTop="61dp"
+                android:layout_toLeftOf="@+id/txtNomeID"
+                android:layout_toStartOf="@+id/txtNomeID"
+                android:text="Acertos: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:gravity="fill_horizontal" />
+
+            <TextView
+                android:id="@+id/txtPontoErrosID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtPontoAcertosID"
+                android:layout_alignStart="@+id/txtPontoAcertosID"
+                android:layout_below="@+id/txtPontoAcertosID"
+                android:layout_marginTop="25dp"
+                android:text="Erros: "
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:gravity="center" />
+
+            <TextView
+                android:id="@+id/txtPontoAID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/txtPontoAcertosID"
+                android:layout_marginLeft="56dp"
+                android:layout_marginStart="56dp"
+                android:layout_toEndOf="@+id/txtNomeID"
+                android:layout_toRightOf="@+id/txtNomeID"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:gravity="center" />
+
+            <TextView
+                android:id="@+id/txtPontoEID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtPontoAID"
+                android:layout_alignStart="@+id/txtPontoAID"
+                android:layout_alignTop="@+id/txtPontoErrosID"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/botaoVoltarID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="Voltar"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:gravity="center"
+                android:layout_below="@+id/txtPontoErrosID"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

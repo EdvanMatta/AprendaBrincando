@@ -58,6 +58,8 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
         leao.setOnClickListener(this);
         ovelha.setOnClickListener(this);
         macaco.setOnClickListener(this);
+
+        alertaDialogo(pontosAcertos, pontosErros);
     }
 
     @Override
@@ -87,84 +89,98 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.caoId:
                 if (texto.getText().equals("Cão")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.cao);
                     tocarMusica();
                     palavraAleatoria();
-                    pontosAcertos = ACERTOS;
+                    pontosAcertos += ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);;
                 break;
             case R.id.gatoId:
                 if (texto.getText().equals("Gato")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.gato);
                     tocarMusica();
                     palavraAleatoria();
-                    pontosAcertos = ACERTOS;
+                    pontosAcertos += ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.vacaId:
                 if (texto.getText().equals("Vaca")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.vaca);
                     tocarMusica();
                     palavraAleatoria();
-                    pontosAcertos = ACERTOS;
+                    pontosAcertos += ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.leaoId:
                 if (texto.getText().equals("Leão")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.leao);
                     tocarMusica();
                     palavraAleatoria();
                     pontosAcertos = ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.ovelhaId:
                 if (texto.getText().equals("Ovelha")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.ovelha);
                     tocarMusica();
                     palavraAleatoria();
-                    pontosAcertos = ACERTOS;
+                    pontosAcertos += ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.macacoId:
                 if (texto.getText().equals("Macaco")) {
+                    Toast.makeText(JogoLeiaBicho.this, "Parabêns Você Acertou!", Toast.LENGTH_SHORT).show();
                     som = MediaPlayer.create(JogoLeiaBicho.this, R.raw.macaco);
                     tocarMusica();
                     palavraAleatoria();
-                    pontosAcertos = ACERTOS;
+                    pontosAcertos += ACERTOS;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(JogoLeiaBicho.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
+            default:
         }
-
+        if (contador >= 10)
+            alertaDialogo(pontosAcertos, pontosErros);
     }
 
     @Override
@@ -177,34 +193,37 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
         super.onDestroy();
     }
 
-    private void pontuacaoJogo(int acertos, int erros){
-        pontos[0] += acertos;
-        pontos[1] += erros;
-        contador ++;
-        if (contador > 10) {
-            alertaDialogo(pontos);
+//    private void pontuacaoJogo(int acertos, int erros){
+//        int pAcertos = acertos;
+//        int pErros = erros;
+//        contador ++;
+//        if (contador > 10) {
+//            alertaDialogo(pAcertos, pErros);
+//        }
+//    }
+
+    public void alertaDialogo(final int acertos, final int erros){
+        contador++;
+        if (contador >= 10) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Aprenda Brincando");
+            builder.setMessage("Digite o seu nome");
+            final EditText input = new EditText(this);
+            builder.setView(input);
+            builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String nome = input.getText().toString();
+                    Intent i = new Intent(JogoLeiaBicho.this, Score.class);
+                    i.putExtra("nome", nome);
+                    i.putExtra("pontosAcertos", acertos);
+                    i.putExtra("pontosErros", erros);
+                    startActivity(i);
+                }
+            });
+            AlertDialog alerta = builder.create();
+            alerta.show();
         }
-    }
-
-    public void alertaDialogo(final int[] pontos){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Aprenda Brincando");
-        builder.setMessage("Digite o seu nome");
-        final EditText input = new EditText(this);
-        builder.setView(input);
-        builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String nome = input.getText().toString();
-                Intent i = new Intent(JogoLeiaBicho.this, Score.class);
-                i.putExtra("nome", nome);
-                i.putExtra("pontos", pontos);
-                startActivity(i);
-            }
-        });
-        AlertDialog alerta = builder.create();
-        alerta.show();
     }
 
     public void vibrar(){

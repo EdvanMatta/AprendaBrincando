@@ -11,6 +11,7 @@
         android:layout_width="383dp"
         android:layout_height="566dp"
         android:background="#f5e9b9"
+        tools:gravity="center_horizontal"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -33,18 +34,20 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="13dp"
             android:padding="10dp"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp" />
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            tools:gravity="center_vertical|center_horizontal" />
 
         <ImageView
             android:id="@+id/caoId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/cao"
-            android:layout_below="@+id/txtAnimalId"
             android:layout_alignLeft="@+id/imageView"
             android:layout_alignStart="@+id/imageView"
-            android:layout_marginTop="18dp" />
+            android:layout_below="@+id/txtAnimalId"
+            android:layout_marginTop="18dp"
+            app:srcCompat="@drawable/cao" />
 
         <ImageView
             android:id="@+id/gatoId"

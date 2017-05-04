@@ -33,7 +33,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
     private int pontosAcertos;
     private int pontosErros;
     private int contador;
-    private int[] pontos;
+//    private int[] pontos;
 
     private int ACERTO = 1;
     private int ERROS = 1;
@@ -71,6 +71,8 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
         imgOito.setOnClickListener(this);
         imgSeis.setOnClickListener(this);
         imgPinto.setOnClickListener(this);
+
+        pontuacaoJogo(pontosAcertos, pontosErros);
     }
 
     @Override
@@ -83,142 +85,152 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v){
-
         switch (v.getId()){
             case R.id.imgBanheiraID:
                 if(imgViewPrincipal == R.drawable.banheira) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgCadeiraID:
                 if(imgViewPrincipal == R.drawable.cadeira) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgCameraID:
                 if(imgViewPrincipal == R.drawable.camera) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgDezID:
                 if(imgViewPrincipal == R.drawable.dez) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgLapisID:
                 if(imgViewPrincipal == R.drawable.lapis) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgLixeiraID:
                 if(imgViewPrincipal == R.drawable.lixeira) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgNoveID:
                 if(imgViewPrincipal == R.drawable.nove) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos =ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgOculosID:
                 if(imgViewPrincipal == R.drawable.oculos) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgOitoID:
                 if(imgViewPrincipal == R.drawable.oito) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgSeisID:
                 if(imgViewPrincipal == R.drawable.seis) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             case R.id.imgPintoID:
                 if(imgViewPrincipal == R.drawable.pintinho) {
                     Toast.makeText(EncontreObjeto.this, "Parabéns Você Acertou!", Toast.LENGTH_SHORT).show();
                     imgPrincipal.setImageResource(imagemView(numAletorio()));
-                    pontosAcertos = ACERTO;
+                    pontosAcertos += ACERTO;
+                    contador ++;
                 }else {
                     vibrar();
                     Toast.makeText(EncontreObjeto.this, "Você Errou!", Toast.LENGTH_SHORT).show();
-                    pontosErros = ERROS;
+                    pontosErros += ERROS;
+                    contador ++;
                 }
-                pontuacaoJogo(pontosAcertos, pontosErros);
                 break;
             default:
         }
+        if (contador > 10)
+            pontuacaoJogo(pontosAcertos, pontosErros);
     }
 
     private int numAletorio() {
@@ -270,36 +282,49 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
         return objeto;
     }
 
-    private void pontuacaoJogo(int acertos, int erros){
-
-        pontos[0] += acertos;
-        pontos[1] += erros;
-        contador ++;
+    private void pontuacaoJogo(final int acertos, final int erros){
         if (contador > 10) {
-            alertaDialogo(pontos);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Aprenda Brincando");
+            builder.setMessage("Digite o seu nome");
+            final EditText input = new EditText(this);
+            builder.setView(input);
+            builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    String nome = input.getText().toString();
+                    Intent i = new Intent(EncontreObjeto.this, Score.class);
+                    i.putExtra("nome", nome);
+                    i.putExtra("pontosAcertos", acertos);
+                    i.putExtra("pontosErros", erros);
+                    startActivity(i);
+                }
+            });
+            AlertDialog alerta = builder.create();
+            alerta.show();
         }
     }
 
-    public void alertaDialogo(final int[] pontos){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Aprenda Brincando");
-        builder.setMessage("Digite o seu nome");
-        final EditText input = new EditText(this);
-        builder.setView(input);
-        builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String nome = input.getText().toString();
-                Intent i = new Intent(EncontreObjeto.this, Score.class);
-                i.putExtra("nome", nome);
-                i.putExtra("pontos", pontos);
-                startActivity(i);
-            }
-        });
-        AlertDialog alerta = builder.create();
-        alerta.show();
-    }
+//    public void alertaDialogo(final int[] pontos){
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Aprenda Brincando");
+//        builder.setMessage("Digite o seu nome");
+//        final EditText input = new EditText(this);
+//        builder.setView(input);
+//        builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                String nome = input.getText().toString();
+//                Intent i = new Intent(EncontreObjeto.this, Score.class);
+//                i.putExtra("nome", nome);
+//                i.putExtra("pontos", pontos);
+//                startActivity(i);
+//            }
+//        });
+//        AlertDialog alerta = builder.create();
+//        alerta.show();
+//    }
 
     public void vibrar(){
         Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

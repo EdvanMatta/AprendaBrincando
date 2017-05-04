@@ -11,12 +11,14 @@
         android:layout_height="567dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            tools:gravity="center_vertical|center_horizontal"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="12dp">
 
@@ -29,122 +31,126 @@
 
             <ImageView
                 android:id="@+id/imgPrincipalID"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:paddingBottom="10dp"
                 android:paddingEnd="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/camera" />
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/fundo_2">
+            android:layout_height="313dp"
+            android:background="@drawable/fundo_2"
+            tools:gravity="center_vertical|center_horizontal"
+            android:layout_weight="0.30">
 
             <ImageView
                 android:id="@+id/imgCameraID"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                app:srcCompat="@drawable/camera"
-                android:layout_alignParentTop="true"
                 android:layout_alignLeft="@+id/imgCadeiraID"
+                android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/imgCadeiraID"
                 android:layout_marginLeft="27dp"
-                android:layout_marginStart="27dp" />
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/camera" />
 
             <ImageView
                 android:id="@+id/imgLapisID"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
+                android:layout_above="@+id/imgBanheiraID"
+                android:layout_alignEnd="@+id/imgOculosID"
+                android:layout_alignRight="@+id/imgOculosID"
                 android:layout_marginEnd="21dp"
                 android:layout_marginRight="21dp"
-                app:srcCompat="@drawable/lapis"
-                android:layout_above="@+id/imgBanheiraID"
-                android:layout_alignRight="@+id/imgOculosID"
-                android:layout_alignEnd="@+id/imgOculosID" />
+                app:srcCompat="@drawable/lapis" />
 
             <ImageView
                 android:id="@+id/imgBanheiraID"
                 android:layout_width="70dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/banheira"
-                android:layout_alignTop="@+id/imgPintoID"
-                android:layout_alignRight="@+id/imgNoveID"
                 android:layout_alignEnd="@+id/imgNoveID"
-                android:layout_marginTop="20dp" />
+                android:layout_alignRight="@+id/imgNoveID"
+                android:layout_alignTop="@+id/imgPintoID"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/banheira" />
 
             <ImageView
                 android:id="@+id/imgCadeiraID"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/cadeira"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/imgLixeiraID"
                 android:layout_marginLeft="19dp"
                 android:layout_marginStart="19dp"
-                android:layout_alignTop="@+id/imgLixeiraID"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                app:srcCompat="@drawable/cadeira" />
 
             <ImageView
                 android:id="@+id/imgDezID"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/dez"
                 android:layout_alignTop="@+id/imgNoveID"
+                android:layout_toEndOf="@+id/imgCameraID"
                 android:layout_toRightOf="@+id/imgCameraID"
-                android:layout_toEndOf="@+id/imgCameraID" />
+                app:srcCompat="@drawable/dez" />
 
             <ImageView
                 android:id="@+id/imgSeisID"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/seis"
                 android:layout_alignTop="@+id/imgLixeiraID"
                 android:layout_toLeftOf="@+id/imgOculosID"
-                android:layout_toStartOf="@+id/imgOculosID" />
+                android:layout_toStartOf="@+id/imgOculosID"
+                app:srcCompat="@drawable/seis" />
 
             <ImageView
                 android:id="@+id/imgLixeiraID"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/lixeira"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="36dp"
                 android:layout_toLeftOf="@+id/imgNoveID"
                 android:layout_toStartOf="@+id/imgNoveID"
-                android:layout_marginBottom="36dp" />
+                app:srcCompat="@drawable/lixeira" />
 
             <ImageView
                 android:id="@+id/imgOitoID"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/oito"
                 android:layout_alignBottom="@+id/imgOculosID"
+                android:layout_toEndOf="@+id/imgCadeiraID"
                 android:layout_toRightOf="@+id/imgCadeiraID"
-                android:layout_toEndOf="@+id/imgCadeiraID" />
+                app:srcCompat="@drawable/oito" />
 
             <ImageView
                 android:id="@+id/imgOculosID"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/oculos"
-                android:layout_marginRight="24dp"
-                android:layout_marginEnd="24dp"
                 android:layout_above="@+id/imgLixeiraID"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="18dp" />
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="18dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:srcCompat="@drawable/oculos" />
 
             <ImageView
                 android:id="@+id/imgNoveID"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/nove"
                 android:layout_below="@+id/imgCameraID"
+                android:layout_marginTop="13dp"
                 android:layout_toLeftOf="@+id/imgSeisID"
                 android:layout_toStartOf="@+id/imgSeisID"
-                android:layout_marginTop="13dp" />
+                app:srcCompat="@drawable/nove" />
 
             <ImageView
                 android:id="@+id/imgPintoID"
