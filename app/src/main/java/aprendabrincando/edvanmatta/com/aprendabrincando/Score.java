@@ -27,11 +27,12 @@ public class Score extends AppCompatActivity {
         pontosErros = (TextView) findViewById(R.id.txtPontoEID);
         botaoVoltar = (Button) findViewById(R.id.botaoVoltarID);
         Intent it = getIntent();
-        String nomeExtra = it.getStringExtra("nome");
+//        Bundle it = getIntent().getExtras();
+        //String nomeExtra = it.getString("nome");
         String pontosA = Integer.toString(it.getIntExtra("pontosAcertos",0));
         String pontosE = Integer.toString(it.getIntExtra("pontosErros", 0));
 
-        nome.setText(nomeExtra);
+        //nome.setText(nomeExtra);
         pontosAcertos.setText(pontosA);
         pontosErros.setText(pontosE);
 
@@ -43,9 +44,9 @@ public class Score extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//    }
 }

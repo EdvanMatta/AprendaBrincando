@@ -229,7 +229,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
                 break;
             default:
         }
-        if (contador > 10)
+        if (contador >= 5)
             pontuacaoJogo(pontosAcertos, pontosErros);
     }
 
@@ -283,7 +283,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
     }
 
     private void pontuacaoJogo(final int acertos, final int erros){
-        if (contador > 10) {
+        if (contador >= 5) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
@@ -294,7 +294,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(EncontreObjeto.this, Score.class);
-                    i.putExtra("nome", nome);
+                    //i.putExtra("nome", nome);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
