@@ -26,13 +26,6 @@ public class Score extends AppCompatActivity {
         pontosAcertos = (TextView) findViewById(R.id.txtPontoAID);
         pontosErros = (TextView) findViewById(R.id.txtPontoEID);
         botaoVoltar = (Button) findViewById(R.id.botaoVoltarID);
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
         Intent it = getIntent();
         String nomeExtra = it.getStringExtra("nome");
         String pontosA = Integer.toString(it.getIntExtra("pontosAcertos",0));
@@ -49,5 +42,10 @@ public class Score extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

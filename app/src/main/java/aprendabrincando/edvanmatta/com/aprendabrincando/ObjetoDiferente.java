@@ -176,8 +176,7 @@ public class ObjetoDiferente extends AppCompatActivity{
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
             final EditText input = new EditText(this);
-            builder.setView(input);
-            //builder.getContext().getText();
+            builder.setView(input).toString();
             builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

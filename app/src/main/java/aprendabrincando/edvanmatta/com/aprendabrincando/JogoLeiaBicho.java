@@ -209,13 +209,15 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
             final EditText input = new EditText(this);
-            builder.setView(input);
+            builder.setView(input).toString();
             builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(JogoLeiaBicho.this, Score.class);
-                    i.putExtra("nome", nome);
+                    Bundle b = new Bundle();
+                    b.putString("nome", nome);
+                    i.putExtras(b);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
