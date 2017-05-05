@@ -22,14 +22,12 @@ public class ObjetoDiferente extends AppCompatActivity{
     private ImageView img2;
     private ImageView img3;
     private ImageView img4;
+    private  EditText input;
 
     private int contador;
     private int pontosAcertos;
     private int pontosErros;
-
     private int idView;
-    int[] pontos;
-
     private int ACERTOS = 1;
     private int ERROS = 1;
 
@@ -175,17 +173,18 @@ public class ObjetoDiferente extends AppCompatActivity{
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
-            final EditText input = new EditText(this);
+            input = new EditText(this);
             builder.setView(input).toString();
             builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(ObjetoDiferente.this, Score.class);
-                    //i.putExtra("nome", nome);
+                    i.putExtra("nome", nome);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
+                    finish();
                 }
             });
             AlertDialog alerta = builder.create();

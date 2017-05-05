@@ -12,7 +12,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/background_light"
         app:layout_constraintTop_toTopOf="parent"
-        tools:gravity="center_vertical|center_horizontal"
+        tools:gravity="center_horizontal"
         tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="-10dp">
 
@@ -21,26 +21,30 @@
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/titulo_jogo_2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentTop="false"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/titulo_jogo_2" />
 
         <ImageView
             android:id="@+id/img1Id"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="29dp"
             android:layout_below="@+id/imageView6"
-            android:layout_alignLeft="@+id/imageView6"
-            android:layout_alignStart="@+id/imageView6" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp" />
 
         <ImageView
             android:id="@+id/img2Id"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_alignEnd="@+id/imageView6"
-            android:layout_alignRight="@+id/imageView6"
-            android:layout_alignTop="@+id/img1Id" />
+            android:layout_alignTop="@+id/img1Id"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="21dp"
+            android:layout_marginEnd="21dp" />
 
         <ImageView
             android:id="@+id/img4Id"
@@ -54,12 +58,12 @@
             android:id="@+id/img3Id"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_alignLeft="@+id/img1Id"
+            android:layout_alignStart="@+id/img1Id"
+            android:layout_below="@+id/img1Id"
             android:layout_marginTop="25dp"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="305dp"
-            android:layout_below="@+id/img1Id"
-            android:layout_alignLeft="@+id/img1Id"
-            android:layout_alignStart="@+id/img1Id" />
+            tools:layout_editor_absoluteY="305dp" />
 
     </RelativeLayout>
 

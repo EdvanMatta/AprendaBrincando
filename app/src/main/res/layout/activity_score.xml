@@ -11,11 +11,12 @@
         android:layout_height="565dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/fundo_escolar"
+        android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
+        android:weightSum="1"
         tools:gravity="center_vertical|center_horizontal"
         tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="1dp"
-        android:weightSum="1" >
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
             android:id="@+id/txtViewTitulo"
@@ -27,104 +28,117 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:textColor="@android:color/black" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="383dp"
-            android:layout_weight="0.23">
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtNomeID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="70dp"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="false"
+                android:layout_marginTop="30dp"
                 android:background="@android:color/background_light"
-                tools:gravity="center" />
-
-            <TextView
-                android:id="@+id/txtPontoAcertosID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/background_light"
+                android:gravity="center_vertical|center_horizontal"
                 android:padding="10dp"
-                android:text="Acertos: "
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:gravity="fill_horizontal"
-                android:layout_below="@+id/txtNomeID"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="35dp"
-                android:layout_marginStart="35dp" />
+                android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/txtPontoErrosID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/txtPontoAcertosID"
-                android:layout_alignStart="@+id/txtPontoAcertosID"
-                android:layout_below="@+id/txtPontoAcertosID"
-                android:layout_marginTop="25dp"
-                android:background="@android:color/background_light"
-                android:padding="10dp"
-                android:text="Erros: "
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:gravity="center" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtPontoAID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/txtPontoAcertosID"
-                android:layout_marginLeft="56dp"
-                android:layout_marginStart="56dp"
-                android:layout_toEndOf="@+id/txtNomeID"
-                android:layout_toRightOf="@+id/txtNomeID"
-                android:background="@android:color/background_light"
-                android:padding="10dp"
-                android:text="0"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:gravity="center" />
+                <TextView
+                    android:id="@+id/txtPontoAcertosID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="58dp"
+                    android:background="@android:color/background_light"
+                    android:padding="10dp"
+                    android:text="Acertos: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:gravity="center_vertical|center_horizontal" />
 
-            <TextView
-                android:id="@+id/txtPontoEID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/txtPontoAID"
-                android:layout_alignStart="@+id/txtPontoAID"
-                android:layout_alignTop="@+id/txtPontoErrosID"
-                android:background="@android:color/background_light"
-                android:backgroundTint="@android:color/background_light"
-                android:padding="10dp"
-                android:text="0"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtPontoErrosID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txtPontoAcertosID"
+                    android:layout_alignStart="@+id/txtPontoAcertosID"
+                    android:layout_below="@+id/txtPontoAcertosID"
+                    android:layout_marginTop="25dp"
+                    android:background="@android:color/background_light"
+                    android:padding="10dp"
+                    android:text="Erros: "
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:gravity="center" />
 
-            <Button
-                android:id="@+id/botaoVoltarID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/txtPontoErrosID"
-                android:layout_marginTop="39dp"
-                android:background="@android:color/black"
-                android:text="Voltar"
-                android:textColor="@android:color/background_light"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:gravity="center" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/txtPontoAID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txtPontoAcertosID"
+                    android:layout_alignBottom="@+id/txtPontoAcertosID"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginRight="85dp"
+                    android:background="@android:color/background_light"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:gravity="center" />
+
+                <TextView
+                    android:id="@+id/txtPontoEID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txtPontoAID"
+                    android:layout_alignStart="@+id/txtPontoAID"
+                    android:layout_alignTop="@+id/txtPontoErrosID"
+                    android:background="@android:color/background_light"
+                    android:backgroundTint="@android:color/background_light"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/botaoVoltarID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtPontoEID"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="46dp"
+                    android:background="@android:color/black"
+                    android:padding="5dp"
+                    android:text="Voltar"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:gravity="center" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

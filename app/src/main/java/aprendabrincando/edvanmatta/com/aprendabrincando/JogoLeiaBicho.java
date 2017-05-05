@@ -33,6 +33,8 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
     private int contador;
     int[] pontos;
 
+    private EditText input;
+
     private int ACERTOS = 1;
     private int ERROS = 1;
 
@@ -208,7 +210,7 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
-            final EditText input = new EditText(this);
+            input = new EditText(this);
             builder.setView(input).toString();
             builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
                 @Override
@@ -217,10 +219,11 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
                     Intent i = new Intent(JogoLeiaBicho.this, Score.class);
                     //Bundle b = new Bundle();
                     //b.putString("nome", nome);
-                    //i.putExtras(b);
+                    i.putExtra("nome",nome);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
+                    finish();
                 }
             });
             AlertDialog alerta = builder.create();

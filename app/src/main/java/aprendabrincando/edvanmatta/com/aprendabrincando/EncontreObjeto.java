@@ -35,6 +35,8 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
     private int contador;
 //    private int[] pontos;
 
+    private EditText input;
+
     private int ACERTO = 1;
     private int ERROS = 1;
 
@@ -287,17 +289,18 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Aprenda Brincando");
             builder.setMessage("Digite o seu nome");
-            final EditText input = new EditText(this);
+            input = new EditText(this);
             builder.setView(input).toString();
             builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(EncontreObjeto.this, Score.class);
-                    //i.putExtra("nome", nome);
+                    i.putExtra("nome", nome);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
+                    finish();
                 }
             });
             AlertDialog alerta = builder.create();
