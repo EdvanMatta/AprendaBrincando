@@ -46,7 +46,8 @@
                 android:gravity="center_vertical|center_horizontal"
                 android:padding="10dp"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -43,22 +43,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/cao"
-            android:layout_marginRight="23dp"
-            android:layout_marginEnd="23dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginStart="31dp"
             android:layout_below="@+id/txtAnimalId"
-            android:layout_toLeftOf="@+id/txtAnimalId"
-            android:layout_toStartOf="@+id/txtAnimalId" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <ImageView
             android:id="@+id/gatoId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/gato"
-            android:layout_alignTop="@+id/caoId"
-            android:layout_toRightOf="@+id/txtAnimalId"
-            android:layout_toEndOf="@+id/txtAnimalId"
-            android:layout_marginLeft="22dp"
-            android:layout_marginStart="22dp" />
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_below="@+id/txtAnimalId"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <ImageView
             android:id="@+id/leaoId"
