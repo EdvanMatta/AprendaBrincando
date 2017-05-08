@@ -8,8 +8,6 @@
 
     <LinearLayout
         android:layout_width="383dp"
-        android:layout_height="565dp"
-        android:layout_marginTop="50dp"
         android:background="@drawable/fundo_escolar"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
@@ -36,12 +34,24 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtNomeJogoID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
                 android:id="@+id/txtNomeID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="false"
                 android:layout_centerHorizontal="false"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@android:color/background_light"
                 android:gravity="center_vertical|center_horizontal"
                 android:padding="10dp"
@@ -57,12 +67,9 @@
                     android:id="@+id/txtPontoAcertosID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginTop="58dp"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="28dp"
                     android:background="@android:color/background_light"
                     android:padding="10dp"
                     android:text="Acertos: "
@@ -70,7 +77,10 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    tools:gravity="center_vertical|center_horizontal" />
+                    tools:gravity="center_vertical|center_horizontal"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
                 <TextView
                     android:id="@+id/txtPontoErrosID"
@@ -125,16 +135,16 @@
                     android:id="@+id/botaoVoltarID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txtPontoEID"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="46dp"
+                    android:layout_marginTop="22dp"
                     android:background="@android:color/black"
                     android:padding="5dp"
                     android:text="Voltar"
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    tools:gravity="center" />
+                    tools:gravity="center"
+                    android:layout_below="@+id/txtPontoErrosID"
+                    android:layout_centerHorizontal="true" />
 
 
             </RelativeLayout>

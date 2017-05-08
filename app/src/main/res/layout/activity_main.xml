@@ -7,8 +7,8 @@
     tools:context="aprendabrincando.edvanmatta.com.aprendabrincando.MainActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
         android:background="@drawable/fundo_escolar"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
@@ -48,5 +48,17 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="51dp"
             app:srcCompat="@drawable/botao_jogo_3" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/botaoScoresID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_toRightOf="@+id/botaoJogo3_Id"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:layout_below="@+id/botaoJogo3_Id" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

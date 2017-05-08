@@ -22,6 +22,7 @@
         <activity android:name=".ObjetoDiferente" />
         <activity android:name=".EncontreObjeto" />
         <activity android:name=".Score" />
+        <activity android:name=".HistoricoScores"></activity>
     </application>
 
 </manifest>

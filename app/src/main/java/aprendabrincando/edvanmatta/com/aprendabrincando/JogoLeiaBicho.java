@@ -195,14 +195,6 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
         super.onDestroy();
     }
 
-//    private void pontuacaoJogo(int acertos, int erros){
-//        int pAcertos = acertos;
-//        int pErros = erros;
-//        contador ++;
-//        if (contador > 10) {
-//            alertaDialogo(pAcertos, pErros);
-//        }
-//    }
 
     public void alertaDialogo(final int acertos, final int erros){
         contador++;
@@ -217,9 +209,8 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(JogoLeiaBicho.this, Score.class);
-                    //Bundle b = new Bundle();
-                    //b.putString("nome", nome);
                     i.putExtra("nome",nome);
+                    i.putExtra("jogo", "Que animal é esse?");
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);

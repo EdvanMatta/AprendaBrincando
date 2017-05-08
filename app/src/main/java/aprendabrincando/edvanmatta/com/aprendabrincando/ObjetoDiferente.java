@@ -119,8 +119,6 @@ public class ObjetoDiferente extends AppCompatActivity{
                     pontuacaoJogo(pontosAcertos, pontosErros);
             }
         });
-//        if (contador > 10)
-//            pontuacaoJogo(pontosAcertos, pontosErros);
     }
 
     @Override
@@ -181,6 +179,7 @@ public class ObjetoDiferente extends AppCompatActivity{
                     String nome = input.getText().toString();
                     Intent i = new Intent(ObjetoDiferente.this, Score.class);
                     i.putExtra("nome", nome);
+                    i.putExtra("jogo", "Encontre o Objeto Diferente");
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
@@ -191,27 +190,6 @@ public class ObjetoDiferente extends AppCompatActivity{
             alerta.show();
         }
     }
-
-//    public void alertaDialogo(final int[] pontos){
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Aprenda Brincando");
-//        builder.setMessage("Digite o seu nome");
-//        final EditText input = new EditText(this);
-//        builder.setView(input);
-//        builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                String nome = input.getText().toString();
-//                Intent i = new Intent(getApplicationContext(), Score.class);
-//                i.putExtra("nome", nome);
-//                i.putExtra("pontos", pontos);
-//                startActivity(i);
-//            }
-//        });
-//        AlertDialog alerta = builder.create();
-//        alerta.show();
-//    }
 
     public void vibrar(){
         Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

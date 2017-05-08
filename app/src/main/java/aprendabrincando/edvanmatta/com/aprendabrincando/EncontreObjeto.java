@@ -33,7 +33,6 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
     private int pontosAcertos;
     private int pontosErros;
     private int contador;
-//    private int[] pontos;
 
     private EditText input;
 
@@ -297,6 +296,7 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
                     String nome = input.getText().toString();
                     Intent i = new Intent(EncontreObjeto.this, Score.class);
                     i.putExtra("nome", nome);
+                    i.putExtra("jogo", "Encontre o Objeto");
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);
@@ -307,27 +307,6 @@ public class EncontreObjeto extends AppCompatActivity implements View.OnClickLis
             alerta.show();
         }
     }
-
-//    public void alertaDialogo(final int[] pontos){
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Aprenda Brincando");
-//        builder.setMessage("Digite o seu nome");
-//        final EditText input = new EditText(this);
-//        builder.setView(input);
-//        builder.setNeutralButton("Enviar", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                String nome = input.getText().toString();
-//                Intent i = new Intent(EncontreObjeto.this, Score.class);
-//                i.putExtra("nome", nome);
-//                i.putExtra("pontos", pontos);
-//                startActivity(i);
-//            }
-//        });
-//        AlertDialog alerta = builder.create();
-//        alerta.show();
-//    }
 
     public void vibrar(){
         Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

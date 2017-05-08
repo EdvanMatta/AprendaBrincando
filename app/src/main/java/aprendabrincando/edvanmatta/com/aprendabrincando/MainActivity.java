@@ -3,6 +3,7 @@ package aprendabrincando.edvanmatta.com.aprendabrincando;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView botaoJogo1;
     private ImageView botaoJogo2;
     private ImageView botaoJogo3;
+    private FloatingActionButton botaoScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         botaoJogo1 = (ImageView) findViewById(R.id.botaoJogo1_Id);
         botaoJogo2 = (ImageView) findViewById(R.id.botaoJogo2_Id);
         botaoJogo3 = (ImageView) findViewById(R.id.botaoJogo3_Id);
+        botaoScore = (FloatingActionButton) findViewById(R.id.botaoScoresID);
 
         botaoJogo1.setOnClickListener(new View.OnClickListener() {
             @Override
