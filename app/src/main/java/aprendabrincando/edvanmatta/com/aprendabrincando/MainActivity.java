@@ -1,14 +1,10 @@
 package aprendabrincando.edvanmatta.com.aprendabrincando;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,26 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        botaoScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HistoricoScores.class));
+            }
+        });
     }
 
-//    public void AlertDialog(final Context contexto){
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Aprenda Brincando");
-//        builder.setMessage("Digite o seu nome");
-//        final EditText input = new EditText(this);
-//        builder.setView(input);
-//        builder.setNegativeButton("Enviar", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                String nome = input.getText().toString();
-//                Bundle b = new Bundle();
-//                b.putString("nome", nome);
-//                Intent i = new Intent(contexto, Score.class);
-//                i.putExtras(b);
-//                startActivity(i);
-//            }
-//        });
-//        AlertDialog alerta = builder.create();
-//        alerta.show();
-//    }
 }
