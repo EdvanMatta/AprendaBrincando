@@ -11,8 +11,13 @@ public class Usuario {
     private int pontoAcertos;
     private int pontoErros;
 
-    public Usuario(){
+    public Usuario(){}
 
+    public Usuario(String nomeJogo, String nome , int acerto, int erro){
+        this.nomeJogo = nomeJogo;
+        this.nome = nome;
+        this.pontoAcertos = acerto;
+        this.pontoErros = erro;
     }
 
     public String getNome() {

@@ -209,8 +209,8 @@ public class JogoLeiaBicho extends AppCompatActivity implements View.OnClickList
                 public void onClick(DialogInterface dialog, int which) {
                     String nome = input.getText().toString();
                     Intent i = new Intent(JogoLeiaBicho.this, Score.class);
-                    i.putExtra("nome",nome);
                     i.putExtra("jogo", "Que animal é esse?");
+                    i.putExtra("nome",nome);
                     i.putExtra("pontosAcertos", acertos);
                     i.putExtra("pontosErros", erros);
                     startActivity(i);

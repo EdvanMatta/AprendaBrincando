@@ -14,7 +14,8 @@
         android:weightSum="1"
         tools:gravity="center_vertical|center_horizontal"
         tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtViewTitulo"
