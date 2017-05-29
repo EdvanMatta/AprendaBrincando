@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, JogoLeiaBicho.class));
-                finish();
             }
         });
 
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ObjetoDiferente.class));
-                finish();
             }
         });
 
@@ -44,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, EncontreObjeto.class));
-                finish();
             }
         });
 
